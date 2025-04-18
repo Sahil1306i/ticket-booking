@@ -1,24 +1,15 @@
-package ticket.booking.entities;
+package ticket_booking.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
-@JsonNaming (PropertyNamingStrategy.SnakeCaseStrategy.class)
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
     private String name;
     private String password;
     private String hashedPassword;
-    private List<Ticket> ticketsBooked;
+    public List<Ticket> ticketsBooked;
     private String userId;
 
     public User(String name, String password, String hashedPassword, List<Ticket> ticketsBooked, String userId){
@@ -29,7 +20,6 @@ public class User {
         this.userId = userId;
     }
     public User(){}
-    //defualt constructor which is used when we are not passing anything
 
     public String getName() {
         return name;
@@ -49,7 +39,7 @@ public class User {
 
     public void printTickets(){
         for (int i = 0; i<ticketsBooked.size(); i++){
-        // all the tickets which are booked by the user will print in a loop
+        // we loop thru all the tickets the user have and then print them
 
             System.out.println(ticketsBooked.get(i).getTicketInfo());
         }

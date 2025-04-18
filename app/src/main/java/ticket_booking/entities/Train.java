@@ -1,5 +1,7 @@
 package ticket_booking.entities;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+
 import java.sql.Time;
 import java.util.List;
 import java.util.Map;
