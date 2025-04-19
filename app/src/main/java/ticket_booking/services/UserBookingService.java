@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
+
+
 public class UserBookingService {
     private User user;
     // we will import the user we took while login instead of asking the user again and again
@@ -26,15 +28,29 @@ public class UserBookingService {
 
     public UserBookingService(User user1) throws IOException {
         //constructor
-
         this.user = user1;
-        //taking the user globally
-        File users =new File(USERS_PATH);
-        userList = objectMapper.readValue(users, new TypeReference<List<User>>(){});
+        loadUsers();
+
         // user is put in this on the run time
         //type refrence is wrapper which is telling the list to resolve this
     }
     // we search the user then filter the one with the name we want from the global user then
+
+    public UserBookingService() throws IOException{
+        //taking the user globally
+        loadUsers();
+
+    }
+
+    public List<User> loadUsers() throws IOException{
+        // function to load all the users in the Db
+
+        File users =new File(USERS_PATH);
+        return objectMapper.readValue(users, new TypeReference<List<User>>(){});
+
+        // user is put in this on the run time
+        //type refrence is wrapper which is telling the list to resolve this
+    }
 
     public Boolean loginUser(){
         Optional<User> foundUser = userList.stream().filter(user1 -> {
@@ -69,7 +85,7 @@ public class UserBookingService {
     //json --> Object(User) --> deserialization
     //Object --> json --> serialize
 
-    public void fetchBooking{
+    public void fetchBooking(){
         Optional<User> userFetched = userList.stream().filter(user1 -> {
             return user1.getName().equals(user.getName()) && UserServiceUtil.checkPassword(user.getPassword(), user1.getHashedPassword());
         }).findFirst();
@@ -89,7 +105,7 @@ public class UserBookingService {
         boolean removed  = user.getTicketsBooked().removeIf(ticket -> ticket.getTicketId().equals(finalTicketId1));
 
         String finalTicketId = ticketId;
-        user.getTicketsBooked().removeIf(ticket -> Ticket.getTicketId().equals(finalTicketId));
+        user.getTicketsBooked().removeIf(ticket -> ticket.getTicketId().equals(finalTicketId));
         if(removed){
             System.out.println("Ticket with ID " + ticketId + " has been canceled.");
         }else{
@@ -97,4 +113,7 @@ public class UserBookingService {
         }
         return Boolean.FALSE;
     }
+
+
 }
+
