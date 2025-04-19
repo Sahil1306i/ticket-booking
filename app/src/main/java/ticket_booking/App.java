@@ -3,6 +3,7 @@
  */
 package ticket_booking;
 
+import ticket_booking.entities.Train;
 import ticket_booking.entities.User;
 import ticket_booking.services.UserBookingService;
 import ticket_booking.util.UserServiceUtil;
@@ -39,6 +40,7 @@ public class App {
             System.out.println("5. Book a Seat");
             System.out.println("6. Cancel my Booking");
             System.out.println("7. Exit the App");
+            Train trainSelectedForBooking = new Train();
             option = scanner.nextInt();
             // we are taking the input from the user that what option did he choose
             switch (option){
@@ -73,7 +75,7 @@ public class App {
                     String source = scanner.next();
                     System.out.println("Type your destination station");
                     String dest = scanner.next();
-                    List<Train> trains = userBookingService.getTrains(source, dest);
+                    List<Train> trains = userBookingService.getTrain(source, dest);
                     int index = 1;
                     for (Train t: trains){
                         System.out.println(index+" Train id : "+t.getTrainId());

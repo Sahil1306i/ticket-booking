@@ -14,38 +14,47 @@ public class Train {
     private List<String> stations;
 
     public String getTrainId() {
+
         return trainId;
     }
 
     public void setTrainId(String trainId) {
+
         this.trainId = trainId;
     }
 
     public List<List<Integer>> getSeats() {
+
         return seats;
     }
 
     public void setSeats(List<List<Integer>> seats) {
+
         this.seats = seats;
     }
 
     public Map<String, String> getStationTimes() {
+
         return stationTimes;
     }
 
     public void setStationTimes(Map<String, String> stationTimes) {
+
         this.stationTimes = stationTimes;
     }
 
     public String getTrainNo() {
+
         return trainNo;
     }
 
     public void setTrainNo(String trainNo) {
+
         this.trainNo = trainNo;
     }
 
     public List<String> getStations() {
+
         return stations;
     }
 
