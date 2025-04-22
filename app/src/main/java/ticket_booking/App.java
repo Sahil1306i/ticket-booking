@@ -29,6 +29,7 @@ public class App {
             userBookingService = new UserBookingService();
         } catch (IOException ex) {
             System.out.println("There is something wrong");
+            ex.printStackTrace(); // <-- This shows the real error
             return;
         }
         while(option != 7){
@@ -59,6 +60,7 @@ public class App {
                     String nameToLogin = scanner.next();
                     System.out.println("Enter the password to signup");
                     String passwordToLogin = scanner.next();
+
                     User userToLogin = new User(nameToLogin, passwordToLogin, UserServiceUtil.hashPassword(passwordToLogin), new ArrayList<>(), UUID.randomUUID().toString());
                     try{
                         userBookingService = new UserBookingService(userToLogin);
