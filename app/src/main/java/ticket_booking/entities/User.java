@@ -1,9 +1,10 @@
 package ticket_booking.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 import java.util.List;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
     private String name;
