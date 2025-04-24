@@ -27,7 +27,7 @@ public class TrainService {
         loadTrains();
     }
     public void loadTrains()throws IOException{
-        trainList = objectMapper.readValue(new File(app / src / main / java / ticket_booking / localDb / trains.json), new TypeReference<List<Train>>() {});
+        trainList = objectMapper.readValue(new File(TRAIN_PATH), new TypeReference<List<Train>>() {});
 
     }
 
@@ -49,7 +49,7 @@ public class TrainService {
             return null;
         }
     }
-    public void addTrain{
+    public void addTrain(Train newTrain){
         // Checking here if a train with the same trainId already exists
         Optional<Train> existingTrain = trainList.stream()
                 .filter(train -> train.getTrainId().equalsIgnoreCase(newTrain.getTrainId()))
@@ -67,7 +67,7 @@ public class TrainService {
 
     private void saveTrainListToFile() {
         try {
-            objectMapper.writeValue(new File(app\src\main\java\ticket_booking\localdb\trains.json), trainList);
+            objectMapper.writeValue(new File(TRAIN_PATH), trainList);
         } catch (IOException e) {
             System.out.println("Failed to save train list to file: " + e.getMessage());
         }
@@ -86,7 +86,7 @@ public class TrainService {
             addTrain(updatedTrain);
         }
     }
-    private boolean validTrain(Train train, String source, String desination){
+    private boolean validTrain(Train train, String source, String destination){
         // getting are stations from that particular train in a list
         List<String> stationList = train.getStations();
 

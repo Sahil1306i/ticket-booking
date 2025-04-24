@@ -9,6 +9,7 @@ public class Ticket {
     private String destination;
     private String dateOfTravel;
     private Train train;
+    //constructor
     public Ticket(){}
 
     public Ticket(String ticketId, String userId, String source, String destination, String dateOfTravel, Train train){
