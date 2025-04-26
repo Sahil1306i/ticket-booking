@@ -8,6 +8,7 @@ import ticket_booking.entities.User;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
@@ -15,23 +16,21 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class TrainService {
-    private Train train;
     private static List<Train>trainList;
     private final ObjectMapper objectMapper;
-
     private static final String TRAIN_PATH = "app/src/main/java/ticket_booking/localDb/trains.json";
 
-    public TrainService(Train train1, ObjectMapper objectMapper) throws IOException {
-        this.objectMapper = objectMapper;
+    public TrainService() throws IOException {
+        objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         loadTrains();
     }
     public void loadTrains()throws IOException{
         trainList = objectMapper.readValue(new File(TRAIN_PATH), new TypeReference<List<Train>>() {});
-
+        //        System.out.println(trainList);
     }
 
-    public static void searchTrains(String source, String destination){
+    public static List<Train>searchTrains(String source, String destination){
 
         // getting the source and destination
         // and filtering the trains based on the source and destination
@@ -46,7 +45,7 @@ public class TrainService {
                     .collect(Collectors.toList());
         }catch (Exception ex){
             System.out.println("Error in searchTrains: " + ex.getMessage());
-            return null;
+              return new ArrayList<>();
         }
     }
     public void addTrain(Train newTrain){
@@ -86,7 +85,7 @@ public class TrainService {
             addTrain(updatedTrain);
         }
     }
-    private boolean validTrain(Train train, String source, String destination){
+    private static boolean validTrain(Train train, String source, String destination){
         // getting are stations from that particular train in a list
         List<String> stationList = train.getStations();
 

@@ -1,1 +1,37 @@
-[{"name":"Sahil","password":"12345","hashedPassword":null,"ticketsBooked":null,"userId":null},{"name":"rahul","password":"hhbb11","hashedPassword":null,"ticketsBooked":null,"userId":null},{"name":"Sahil","password":"12345","hashedPassword":"$2a$10$hPwOaFjXEoU9gwbLgzmihOuJMu1XJ7p.S2e7rwqjtDodZZQcN.RoO","ticketsBooked":[],"userId":"50cc6363-f4f2-47f3-ba31-cb8d61207e54"},{"name":"rahul","password":"hhbb11","hashedPassword":"$2a$10$QZdtq3mpE4ipDac47iZT1u.kzf59iR7kycfhTxKbkX1uoiN1ue54O","ticketsBooked":[],"userId":"3595054a-4cb7-4a7f-bbd6-e8e63eec1404"},{"name":"Baka","password":"123456","hashedPassword":"$2a$10$Snq4jR1e5wd5eBrnF.fYEueexqNHAo.xw7w6Z0Ln0SiauAKQsanYW","ticketsBooked":[],"userId":"30cdc40a-fc94-4b6e-a6b8-9426e6b5f081"},{"name":"Baka","password":"123","hashedPassword":"$2a$10$2kLcN7xI0AuyPq44pPZHruhqZwSvpaWxWYUAOJydSvl.T557lO7Di","ticketsBooked":[],"userId":"e1a482b5-6b56-4d0c-9231-9e2bbc081923"}]
+[ {
+  "name" : "Sahil",
+  "password" : "12345",
+  "hashedPassword" : null,
+  "ticketsBooked" : null,
+  "userId" : null
+}, {
+  "name" : "rahul",
+  "password" : "hhbb11",
+  "hashedPassword" : null,
+  "ticketsBooked" : null,
+  "userId" : null
+}, {
+  "name" : "Sahil",
+  "password" : "12345",
+  "hashedPassword" : "$2a$10$hPwOaFjXEoU9gwbLgzmihOuJMu1XJ7p.S2e7rwqjtDodZZQcN.RoO",
+  "ticketsBooked" : [ ],
+  "userId" : "50cc6363-f4f2-47f3-ba31-cb8d61207e54"
+}, {
+  "name" : "rahul",
+  "password" : "hhbb11",
+  "hashedPassword" : "$2a$10$QZdtq3mpE4ipDac47iZT1u.kzf59iR7kycfhTxKbkX1uoiN1ue54O",
+  "ticketsBooked" : [ ],
+  "userId" : "3595054a-4cb7-4a7f-bbd6-e8e63eec1404"
+}, {
+  "name" : "Baka",
+  "password" : "123456",
+  "hashedPassword" : "$2a$10$Snq4jR1e5wd5eBrnF.fYEueexqNHAo.xw7w6Z0Ln0SiauAKQsanYW",
+  "ticketsBooked" : [ ],
+  "userId" : "30cdc40a-fc94-4b6e-a6b8-9426e6b5f081"
+}, {
+  "name" : "",
+  "password" : "Sahil",
+  "hashedPassword" : "$2a$10$a5llzhWuERJI6YFHM2o.feFQmOcE.y1cvq1u/UHdT2QIMwxqA7.eK",
+  "ticketsBooked" : [ ],
+  "userId" : "96c5e65d-1e71-4b2c-8138-2359648c1233"
+} ]
